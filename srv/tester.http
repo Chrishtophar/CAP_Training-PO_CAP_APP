@@ -1,0 +1,95 @@
+
+###read all the entities
+http://localhost:4004/odata/v4/CatalogService
+
+###read all the entities
+http://localhost:4004/odata/v4/CatalogService/$metadata
+
+###read Employee data
+
+
+
+###Create a new Employee data
+POST http://localhost:4004/odata/v4/CatalogService/EmpployeeDetails
+Content-Type: application/json
+
+{
+      "Currency_code": "USD",
+      "ID": "02BD2137-0890-1EEA-A6C2-BB55C19787FA",
+      "accountNumber": "111222333",
+      "bankId": "510000655",
+      "bankName": "My Bank of Antioch",
+      "email": "sally.spring@itelo.info",
+      "gender": "F",
+      "language": "E",
+      "loginName": "SPRINGS",
+      "nameFirst": "Chris",
+      "nameInitials": null,
+      "nameLast": "Spring",
+      "nameMiddle": null,
+      "phone": "+1 224 374 524",
+      "salaryAmount": "5115549.00"
+}
+###Update new Employee data
+PATCH http://localhost:4004/odata/v4/CatalogService/EmpployeeDetails/02BD2137-0890-1EEA-A6C2-BB55C19787FA
+Content-Type: application/json
+
+{
+      "Currency_code": "EUR",
+      "salaryAmount": "1199090.00"
+}
+
+###Delete new Employee data
+DELETE http://localhost:4004/odata/v4/CatalogService/EmpployeeDetails/02BD2137-0890-1EEA-A6C2-BB55C19787FA
+###
+DELETE http://localhost:4004/odata/v4/CatalogService/EmpployeeDetails/85e861bf-db17-4bf3-89b4-4dd84879e4dc
+
+###Get PO details
+get http://localhost:4004/odata/v4/CatalogService/PODetails/74867AD200E41EDBA5D8B0C98DC28052
+
+### Read service metadata
+get http://localhost:4004/odata/v4/CatalogService/EmpployeeDetails?$top=5
+
+### Read service metadata
+get http://localhost:4004/odata/v4/CatalogService/BusinessPartners
+
+
+###Delete BP
+DELETE http://localhost:4004/odata/v4/CatalogService/BusinessPartners/74867AD200E41EDBA5D8B06885994052
+
+###get
+get http://localhost:4004/odata/v4/CatalogService/PODetails/74867AD200E41EDBA5D8B0C98DC30052
+
+###POST
+Post http://localhost:4004/odata/v4/CatalogService/PODetails('74867AD200E41EDBA5D8B0C98DC30052')/CatalogService.increasedPrice
+Content-Type: application/json
+
+{
+
+}
+
+### Get Largest Oder
+Get http://localhost:4004/odata/v4/CatalogService/PODetails('74867AD200E41EDBA5D8B0C98DC30052')/CatalogService.largestOrder
+
+###Create a new Employee data
+POST http://localhost:4004/odata/v4/CatalogService/EmpployeeDetails
+Content-Type: application/json
+
+{
+      "accountNumber": "111222333",
+      "bankId": "510000655",
+      "bankName": "My Bank of Antioch",
+      "email": "sally.spring@itelo.info",
+      "gender": "F",
+      "language": "E",
+      "loginName": "SPRINGS",
+      "nameFirst": "Chris",
+      "nameInitials": null,
+      "nameLast": "Spring",
+      "nameMiddle": null,
+      "phone": "+1 224 374 524",
+      "salaryAmount": "5115549.00"
+}
+
+### Get all EURs
+GET http://localhost:4004/odata/v4/CatalogService/getProducts('EUR')
