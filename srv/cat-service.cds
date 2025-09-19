@@ -28,8 +28,31 @@ service CatalogService @(path: 'CatalogService')
 entity BusinessPartners as projection on master.businesspartner;
 entity productionInformation as projection on master.product;
 //@readonly
-entity EmpployeeDetails as projection on master.employees;
-entity AddressInfo as projection on master.address;
+//entity EmpployeeDetails as projection on master.employees;
+//entity AddressInfo as projection on master.address;
+
+ entity EmployeeDetails @(restrict: [
+    {
+      grant : ['READ'], to : 'Viewer', where : 'bankName = $user.bankName'
+    },
+    {
+      grant : ['WRITE'], to : 'Admin'
+    }
+  ]) as projection on master.employees;
+
+  entity AddressInfo @(restrict: [
+    {
+      grant : ['READ'], to : 'Viewer', where : 'COUNTRY = $user.myCountry'
+    },
+    {
+      grant : ['WRITE'], to : 'Admin'
+    }
+  ]) as projection on master.address;
+
+
+
+
+
 entity PODetails @( odata.draft.enabled : true )  as projection on transaction.purchaseorder{
     *,
     case OVERALL_STATUS
