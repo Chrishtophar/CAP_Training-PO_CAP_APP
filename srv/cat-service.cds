@@ -5,7 +5,7 @@ using { pocap.common as common } from '../db/common';
 
 
 
-service CatalogService @(path: 'CatalogService')
+service CatalogService @(path: 'CatalogService', requires: 'authenticated-user' )
 {
 
 @Capabilities : {

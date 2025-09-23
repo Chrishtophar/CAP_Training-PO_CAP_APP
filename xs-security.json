@@ -1,6 +1,6 @@
 {
  "xsappname": "pocapapp",
-  "tenant-mode": "dedicated",
+ "tenant-mode": "dedicated",
  "scopes": [
   {
    "name": "$XSAPPNAME.Viewer",
@@ -56,5 +56,5 @@
    "https://*.cfapps.us10-001.hana.ondemand.com/login/callback"
   ]
  },
- "xsenableasyncservice": true
+ "xsenableasyncservice": "true"
 }

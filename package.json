@@ -25,7 +25,7 @@
     "watch-cap_po_application": "cds watch --open cappoapplication/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "cds": {
-    "server" : { "index" : true},
+    "server" : { "index" : true },
     "requires": {
       "[production]": {
         "auth": "xsuaa"
