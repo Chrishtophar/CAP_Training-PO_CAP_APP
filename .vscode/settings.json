@@ -16,5 +16,6 @@
       "database": "${workspaceFolder:pocapapp}/db.sqlite",
       "name": "DBSQlite"
     }
-  ]
+  ],
+  "breadcrumbs.enabled": true
 }
